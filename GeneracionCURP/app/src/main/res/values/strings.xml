@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GeneracionCURP</string>
+    <string name="app_name">Generador de CURP</string>
     <string name="nombre">Nombre</string>
     <string name="apellido_materno">Apellido Materno</string>
     <string name="apellido_paterno">Apellido Paterno</string>
@@ -7,4 +7,6 @@
     <string name="fecha_de_nacimiento">fecha de nacimiento</string>
     <string name="sexo">Sexo</string>
     <string name="entidad_de_nacimiento">Entidad de nacimiento</string>
+    <string name="invalid_name">Ingresa un nombre</string>
+    <string name="invalid_apellido">Ingresa un apellido</string>
 </resources>

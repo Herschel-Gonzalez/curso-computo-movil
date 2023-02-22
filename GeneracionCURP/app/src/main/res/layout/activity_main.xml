@@ -11,6 +11,16 @@
         android:id="@+id/nombre"
         android:paddingTop="20sp"
         android:hint="@string/nombre"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/paterno"
+        android:paddingTop="20sp"
+        android:hint="@string/apellido_paterno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -25,14 +35,7 @@
 
     </EditText>
 
-    <EditText
-        android:id="@+id/paterno"
-        android:paddingTop="20sp"
-        android:hint="@string/apellido_paterno"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-    </EditText>
 
     <TextView
         android:text="@string/sexo"
@@ -85,6 +88,17 @@
         android:layout_height="wrap_content">
 
     </Button>
+
+    <TextView
+        android:id="@+id/curp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:paddingTop="25sp"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
 
 
 
