@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/nombre"
+        android:paddingTop="20sp"
+        android:hint="@string/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/materno"
+        android:paddingTop="20sp"
+        android:hint="@string/apellido_materno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/paterno"
+        android:paddingTop="20sp"
+        android:hint="@string/apellido_paterno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </EditText>
+
+    <TextView
+        android:text="@string/sexo"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <Spinner
+        android:id="@+id/sexo"
+        android:paddingTop="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </Spinner>
+
+    <TextView
+        android:text="@string/entidad_de_nacimiento"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+    <Spinner
+        android:id="@+id/entidad_nacimiento"
+        android:paddingTop="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </Spinner>
+
+    <Button
+
+        android:id="@+id/fnacimiento"
+        android:text="@string/fecha_de_nacimiento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </Button>
+
+
+
+    <Button
+        android:id="@+id/btn_generar_curp"
+        android:text="@string/generar_curp"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </Button>
+
+
+
+</LinearLayout>
