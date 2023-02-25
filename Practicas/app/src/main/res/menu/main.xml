@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+
+        android:id="@+id/textView"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:orderInCategory="@integer/material_motion_duration_long_1"
+        android:title="@string/txt_opTv" />
+    <item
+        android:id="@+id/ediText"
+        android:icon="@android:drawable/edit_text"
+        app:showAsAction="always"
+        android:orderInCategory="@integer/material_motion_duration_medium_1"
+        android:title="@string/txt_opEt" />
+    <item
+
+        android:icon="@android:drawable/button_onoff_indicator_off"
+        app:showAsAction="ifRoom"
+        android:id="@+id/button"
+        android:title="@string/txt_opButton" />
+    <item
+        android:icon="@android:drawable/ic_menu_search"
+        android:id="@+id/radio"
+        app:showAsAction="always"
+        android:title="@string/txt_opRadio" />
+    <item
+        android:icon="@android:drawable/checkbox_off_background"
+        app:showAsAction="never"
+        android:id="@+id/checkbox"
+        android:title="@string/txt_opCheck" />
+    <item android:title="@string/txt_opSpinner"
+        android:id="@+id/spinner"
+        android:icon="@android:drawable/ic_delete"
+        app:showAsAction="ifRoom"/>
+    <item android:title="@string/txt_opListView"
+        android:id="@+id/listView"
+        android:icon="@android:drawable/ic_dialog_info"
+        app:showAsAction="always"/>
+</menu>

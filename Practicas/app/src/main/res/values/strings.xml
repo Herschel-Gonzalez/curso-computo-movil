@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Practicas</string>
+    <string name="txt_opTv">TextView</string>
+    <string name="txt_opEt">EditText</string>
+    <string name="txt_opButton">Button</string>
+    <string name="txt_opRadio">Radio</string>
+    <string name="txt_opCheck">CheckBox</string>
+    <string name="txt_opSpinner">Spinner</string>
+    <string name="txt_opListView">ListView</string>
+</resources>
