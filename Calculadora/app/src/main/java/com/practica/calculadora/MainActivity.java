@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
     Button cero,uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,punto;
     Button suma,resta,multiplicacion,division;
@@ -161,18 +164,36 @@ public class MainActivity extends AppCompatActivity {
                 String screen = pantalla.getText().toString();
                 if (screen.length()>0){
                     if(screen.charAt(screen.length()-1)!='.'){
-
+                        boolean tieneOperaciones = false;
                         for (int i = screen.length()-1; i > 0 ; i--) {
                             if (screen.charAt(i)=='+'||screen.charAt(i)=='-'||screen.charAt(i)=='X'||screen.charAt(i)=='/'){
+                                tieneOperaciones=true;
                                 String cantidad = screen.substring(i,screen.length()-1);
                                 if (!cantidad.contains(".")){
-                                    String nuevaPantalla = screen+".";
-                                    pantalla.setText(nuevaPantalla);
+
+
+                                    int longitudPantalla = screen.length();
+                                   if (screen.charAt(longitudPantalla-1)=='+'||screen.charAt(longitudPantalla-1)=='-'||screen.charAt(longitudPantalla-1)=='X'||screen.charAt(longitudPantalla-1)=='/'){
+                                       String nuevaPantalla = screen+"0.";
+                                       pantalla.setText(nuevaPantalla);
+                                   }else{
+                                       String nuevaPantalla = screen+".";
+                                       pantalla.setText(nuevaPantalla);
+                                   }
                                 }
                                 break;
                             }
                         }
+                        if (!tieneOperaciones){
+                            if (!screen.contains(".")){
+                                String nuevaPantalla = screen+".";
+                                pantalla.setText(nuevaPantalla);
+                            }
+
+                        }
                     }
+                }else{
+                    pantalla.setText("0.");
                 }
             }
         });
@@ -190,6 +211,22 @@ public class MainActivity extends AppCompatActivity {
                 String screen = pantalla.getText().toString();
                 if (screen.length()>0){
                     pantalla.setText(screen.substring(0,screen.length()-1));
+                }
+
+            }
+        });
+
+        igual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String screen = pantalla.getText().toString();
+                String [] operaciones = screen.split("[+\\-\\\\/X]");
+                System.out.println(Arrays.toString(operaciones));
+                for (int i = 0; i < screen.length(); i++) {
+                    if (esOperacion(screen.charAt(i))){
+                        
+                    }
+
                 }
 
             }
@@ -215,6 +252,16 @@ public class MainActivity extends AppCompatActivity {
         }else{
             return false;
         }
+
+    }
+
+    public static boolean esOperacion(char caracter){
+
+            if(caracter!='+'&&caracter!='-'&&caracter!='X'&&caracter!='/'){
+                return false;
+            }else{
+                return true;
+            }
 
     }
 
