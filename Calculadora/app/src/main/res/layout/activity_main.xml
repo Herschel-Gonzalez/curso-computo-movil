@@ -7,25 +7,26 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/ca"
         android:layout_width="@dimen/width_dimen"
         android:layout_height="@dimen/height_dimen"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:textSize="30sp"
         android:text="CA"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/pantalla" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
+    <TextView
+        android:textSize="50sp"
+        android:id="@+id/pantalla"
         android:layout_width="396dp"
-        android:layout_height="85dp"
+        android:layout_height="185dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="100+200"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
@@ -34,38 +35,197 @@
 
     <Button
 
-        android:id="@+id/button2"
+        android:id="@+id/c"
         android:layout_width="@dimen/width_dimen"
         android:layout_height="@dimen/height_dimen"
         android:layout_marginStart="@dimen/margin_start"
         android:layout_marginTop="8dp"
         android:text="C"
         android:textSize="@dimen/size_text"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintStart_toEndOf="@+id/ca"
+        app:layout_constraintTop_toBottomOf="@+id/pantalla" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/percent"
         android:layout_width="@dimen/width_dimen"
         android:layout_height="@dimen/height_dimen"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="@dimen/margin_start"
+        android:layout_marginTop="8dp"
         android:text="%"
         android:textSize="@dimen/size_text"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintStart_toEndOf="@+id/c"
+        app:layout_constraintTop_toBottomOf="@+id/pantalla" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/division"
         android:layout_width="@dimen/width_dimen"
         android:layout_height="@dimen/height_dimen"
+        android:layout_marginStart="@dimen/margin_start"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/margin_start"
         android:text="/"
         android:textSize="@dimen/size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/percent"
+        app:layout_constraintTop_toBottomOf="@+id/pantalla" />
+
+    <Button
+        android:id="@+id/siete"
+        android:layout_width="@dimen/width_dimen"
+        android:layout_height="@dimen/height_dimen"
+        android:layout_marginStart="16dp"
+        android:text="7"
+        android:textSize="@dimen/size_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ca" />
+
+    <Button
+        android:id="@+id/tres"
+        android:layout_width="@dimen/width_dimen"
+        android:layout_height="@dimen/height_dimen"
+        android:layout_marginStart="@dimen/margin_start"
+        android:text="3"
+        android:textSize="@dimen/size_text"
+        app:layout_constraintStart_toEndOf="@+id/dos"
+        app:layout_constraintTop_toBottomOf="@+id/seis" />
+
+    <Button
+        android:id="@+id/decimal"
+        android:layout_width="@dimen/width_dimen"
+        android:layout_height="@dimen/height_dimen"
+        android:layout_marginStart="@dimen/margin_start"
+        android:text="."
+        android:textSize="@dimen/size_text"
+        app:layout_constraintStart_toEndOf="@+id/cero"
+        app:layout_constraintTop_toBottomOf="@+id/dos" />
+
+    <Button
+        android:id="@+id/ocho"
+        android:layout_width="@dimen/width_dimen"
+        android:layout_height="@dimen/height_dimen"
+        android:layout_marginStart="@dimen/margin_start"
+        android:text="8"
+        android:textSize="@dimen/size_text"
+        app:layout_constraintStart_toEndOf="@+id/siete"
+        app:layout_constraintTop_toBottomOf="@+id/c" />
+
+    <Button
+        android:id="@+id/seis"
+        android:layout_width="@dimen/width_dimen"
+        android:layout_height="@dimen/height_dimen"
+        android:layout_marginStart="@dimen/margin_start"
+        android:text="6"
+        android:textSize="@dimen/size_text"
+        app:layout_constraintStart_toEndOf="@+id/cinco"
+        app:layout_constraintTop_toBottomOf="@+id/nueve" />
+
+    <Button
+        android:id="@+id/nueve"
+        android:layout_width="@dimen/width_dimen"
+        android:layout_height="@dimen/height_dimen"
+        android:layout_marginStart="@dimen/margin_start"
+        android:text="9"
+        android:textSize="@dimen/size_text"
+        app:layout_constraintStart_toEndOf="@+id/ocho"
+        app:layout_constraintTop_toBottomOf="@+id/percent" />
+
+    <Button
+        android:id="@+id/dos"
+        android:layout_width="@dimen/width_dimen"
+        android:layout_height="@dimen/height_dimen"
+        android:layout_marginStart="@dimen/margin_start"
+        android:text="2"
+        android:textSize="@dimen/size_text"
+        app:layout_constraintStart_toEndOf="@+id/uno"
+        app:layout_constraintTop_toBottomOf="@+id/cinco" />
+
+    <Button
+        android:id="@+id/multiplicacion"
+        android:layout_width="@dimen/width_dimen"
+        android:layout_height="@dimen/height_dimen"
         android:layout_marginStart="@dimen/margin_start"
         android:layout_marginEnd="@dimen/margin_start"
+        android:text="X"
+        android:textSize="@dimen/size_text"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintStart_toEndOf="@+id/nueve"
+        app:layout_constraintTop_toBottomOf="@+id/division" />
+
+    <Button
+        android:id="@+id/cuatro"
+        android:layout_width="@dimen/width_dimen"
+        android:layout_height="@dimen/height_dimen"
+        android:layout_marginStart="16dp"
+        android:text="4"
+        android:textSize="@dimen/size_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/siete" />
+
+    <Button
+        android:id="@+id/uno"
+        android:layout_width="@dimen/width_dimen"
+        android:layout_height="@dimen/height_dimen"
+        android:layout_marginStart="16dp"
+        android:text="1"
+        android:textSize="@dimen/size_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cuatro" />
+
+    <Button
+        android:id="@+id/cero"
+        android:layout_width="178sp"
+        android:layout_height="@dimen/height_dimen"
+        android:layout_marginStart="16dp"
+        android:text="0"
+        android:textSize="@dimen/size_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uno" />
+
+    <Button
+        android:id="@+id/resta"
+        android:layout_width="@dimen/width_dimen"
+        android:layout_height="@dimen/height_dimen"
+        android:layout_marginStart="@dimen/margin_start"
+        android:layout_marginEnd="@dimen/margin_start"
+        android:text="-"
+        android:textSize="@dimen/size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/seis"
+        app:layout_constraintTop_toBottomOf="@+id/multiplicacion" />
+
+    <Button
+        android:id="@+id/cinco"
+        android:layout_width="@dimen/width_dimen"
+        android:layout_height="@dimen/height_dimen"
+        android:layout_marginStart="@dimen/margin_start"
+        android:text="5"
+        android:textSize="@dimen/size_text"
+        app:layout_constraintStart_toEndOf="@+id/cuatro"
+        app:layout_constraintTop_toBottomOf="@+id/ocho" />
+
+    <Button
+        android:id="@+id/suma"
+        android:layout_width="@dimen/width_dimen"
+        android:layout_height="@dimen/height_dimen"
+        android:layout_marginStart="@dimen/margin_start"
+        android:layout_marginEnd="@dimen/margin_start"
+        android:text="+"
+        android:textSize="@dimen/size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tres"
+        app:layout_constraintTop_toBottomOf="@+id/resta" />
+
+    <Button
+        android:id="@+id/resultado"
+        android:layout_width="@dimen/width_dimen"
+        android:layout_height="@dimen/height_dimen"
+        android:layout_marginEnd="@dimen/margin_start"
+        android:layout_marginStart="@dimen/margin_start"
+        android:text="="
+        android:textSize="@dimen/size_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/decimal"
+        app:layout_constraintTop_toBottomOf="@+id/suma" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
