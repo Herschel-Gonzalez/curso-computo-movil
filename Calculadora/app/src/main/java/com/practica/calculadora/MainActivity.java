@@ -10,6 +10,8 @@ import android.widget.TextView;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     Button cero,uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,punto;
@@ -220,8 +222,11 @@ public class MainActivity extends AppCompatActivity {
         igual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String screen = pantalla.getText().toString();
-                String [] operaciones = screen.split("[+\\-\\\\/X]");
+
+                String[] operaciones = screen.split("[+\\-\\\\/X]");
+                List<String> numeros = new LinkedList<String>(Arrays.asList(operaciones));
                 System.out.println(Arrays.toString(operaciones));
                 ArrayList<String>signos = new ArrayList<>();
                 for (int i = 0; i < screen.length(); i++) {
@@ -231,6 +236,70 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                 System.out.println(signos);
+                //efectuamos las multiplicaciones
+                for (int i = 0; i < signos.size(); i++) {
+                    if (signos.get(i).equals("X")){
+                        float numero1 = Float.parseFloat(numeros.get(i));
+                        float numero2 = Float.parseFloat(numeros.get(i+1));
+                        float resultado = numero1*numero2;
+                        numeros.remove(i+1);
+                        numeros.set(i, String.valueOf(resultado));
+                        signos.remove(i);
+
+                    }
+                }
+                System.out.println(numeros);
+                System.out.println(signos);
+
+                //efectuamos las divisiones
+                for (int i = 0; i < signos.size(); i++) {
+                    if (signos.get(i).equals("/")){
+                        float numero1 = Float.parseFloat(numeros.get(i));
+                        float numero2 = Float.parseFloat(numeros.get(i+1));
+                        float resultado = numero1/numero2;
+                        numeros.remove(i+1);
+                        numeros.set(i, String.valueOf(resultado));
+                        signos.remove(i);
+
+                    }
+                }
+                System.out.println(numeros);
+                System.out.println(signos);
+
+                //efectuamos las sumas
+                for (int i = 0; i < signos.size(); i++) {
+                    if (signos.get(i).equals("+")){
+                        float numero1 = Float.parseFloat(numeros.get(i));
+                        float numero2 = Float.parseFloat(numeros.get(i+1));
+                        float resultado = numero1+numero2;
+                        numeros.remove(i+1);
+                        numeros.set(i, String.valueOf(resultado));
+                        signos.remove(i);
+
+                    }
+                }
+                System.out.println(numeros);
+                System.out.println(signos);
+
+                //efectuamos las restas
+                for (int i = 0; i < signos.size(); i++) {
+                    if (signos.get(i).equals("-")){
+                        float numero1 = Float.parseFloat(numeros.get(i));
+                        float numero2 = Float.parseFloat(numeros.get(i+1));
+                        float resultado = numero1-numero2;
+                        numeros.remove(i+1);
+                        numeros.set(i, String.valueOf(resultado));
+                        signos.remove(i);
+
+                    }
+                }
+                System.out.println(numeros);
+                System.out.println(signos);
+
+                if (numeros.size()>0){
+                    pantalla.setText(numeros.get(0));
+                }
+
 
             }
         });
