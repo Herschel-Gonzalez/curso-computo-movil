@@ -7,4 +7,7 @@
     <string name="txt_opCheck">CheckBox</string>
     <string name="txt_opSpinner">Spinner</string>
     <string name="txt_opListView">ListView</string>
+    <string name="ir_a_ejemplo">Ir a ejemplo</string>
+    <string name="buttons">Botones</string>
+    <string name="boton_enviar">Boton enviar</string>
 </resources>
