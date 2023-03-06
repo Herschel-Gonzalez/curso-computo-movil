@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Button cero,uno,dos,tres,cuatro,cinco,seis,siete,ocho,nueve,punto;
     Button suma,resta,multiplicacion,division;
     Button limpiarTodo,limpiar,porcentaje,igual;
-    static TextView pantalla;
+    static TextView pantalla,pantallaOperacion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         ocho = findViewById(R.id.ocho);
         nueve = findViewById(R.id.nueve);
         pantalla = findViewById(R.id.pantalla);
+        pantallaOperacion = findViewById(R.id.operaciones);
+
+        
 
 
 
@@ -205,6 +208,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 pantalla.setText("");
+                pantallaOperacion.setText("");
             }
         });
 
@@ -212,6 +216,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String screen = pantalla.getText().toString();
+                pantallaOperacion.setText("");
                 if (screen.length()>0){
                     pantalla.setText(screen.substring(0,screen.length()-1));
                 }
@@ -224,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 String screen = pantalla.getText().toString();
+                pantallaOperacion.setText(screen);
 
                 String[] operaciones = screen.split("[+\\-\\\\/X]");
                 List<String> numeros = new LinkedList<String>(Arrays.asList(operaciones));

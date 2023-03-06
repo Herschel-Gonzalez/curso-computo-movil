@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/cadenas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadenas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/numeros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Numeros"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cadenas" />
+
+    <Button
+        android:id="@+id/arrays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arrays"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numeros" />
+
+    <Button
+        android:id="@+id/serializables"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Serializables"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/arrays" />
+
+    <Button
+        android:id="@+id/object_array"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Object Array"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/serializables" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
