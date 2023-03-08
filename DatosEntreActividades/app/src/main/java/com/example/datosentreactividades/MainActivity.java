@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String[] productos = {"Iphone 12 pro","Xiaomi Mi 11","Alcatel Pixi 5"};
                 float [] costos = {999.2f,9822.4f,7777.5f};
-                intent = new Intent(getApplicationContext(), CadenasActivity.class);
+                intent = new Intent(getApplicationContext(), ArraysActivity.class);
                 intent.putExtra("productos", productos);
                 intent.putExtra("costos", costos);
                 startActivity(intent);
