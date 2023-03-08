@@ -12,6 +12,9 @@
         android:theme="@style/Theme.DatosEntreActividades"
         tools:targetApi="31">
         <activity
+            android:name=".SerializableActivity"
+            android:exported="false" />
+        <activity
             android:name=".ArraysActivity"
             android:exported="false" />
         <activity

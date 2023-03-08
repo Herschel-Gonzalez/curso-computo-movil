@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 
 public class MainActivity extends AppCompatActivity {
@@ -63,7 +64,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Producto iphone = new Producto("iPhone 13 pro max",29999.3f,0.33f);
                 intent = new Intent(getApplicationContext(), CadenasActivity.class);
-                intent.putExtra("product", (CharSequence) iphone);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("product", (Serializable) iphone);
+                intent.putExtra("product", bundle);
                 startActivity(intent);
             }
         });

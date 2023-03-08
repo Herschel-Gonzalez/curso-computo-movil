@@ -11,5 +11,15 @@ public class Producto {
         this.weight = weight;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public float getPrice() {
+        return price;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
 }
