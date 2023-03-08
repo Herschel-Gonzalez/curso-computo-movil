@@ -231,9 +231,11 @@ public class MainActivity extends AppCompatActivity {
                 String screen = pantalla.getText().toString();
                 pantallaOperacion.setText(screen);
 
+
+
                 String[] operaciones = screen.split("[+\\-\\\\/X]");
                 List<String> numeros = new LinkedList<String>(Arrays.asList(operaciones));
-                System.out.println(Arrays.toString(operaciones));
+                //System.out.println(Arrays.toString(operaciones));
                 ArrayList<String>signos = new ArrayList<>();
                 for (int i = 0; i < screen.length(); i++) {
                     if (esOperacion(screen.charAt(i))){
@@ -241,6 +243,15 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 }
+                if(screen.charAt(0)=='-'){
+                    String newNumber = "-"+numeros.get(1);
+                    System.out.println(newNumber);
+                    numeros.set(1,newNumber);
+                    signos.remove(0);
+                    numeros.remove(0);
+                }
+
+                System.out.println(numeros);
                 System.out.println(signos);
                 //efectuamos las multiplicaciones
                 for (int i = 0; i < signos.size(); i++) {
@@ -271,6 +282,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 System.out.println(numeros);
                 System.out.println(signos);
+
 
                 //efectuamos las sumas
                 for (int i = 0; i < signos.size(); i++) {
