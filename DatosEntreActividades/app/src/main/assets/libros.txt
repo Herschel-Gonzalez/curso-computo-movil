@@ -1,0 +1,5 @@
+1010101010,Head First Android Development,Kathy Sierra,OReilly,Tercera,Ingles
+2020202020,Python for Dummies,Frank Nava,Omega,Primera,Ingles
+3030303030,JavaScript for Backend Developers,Gregory Roice,Future,Segunda,Ingles
+4040404040,Cloud computing with AWS,William Turner,Alpha,Segunda,Ingles
+5050505050,FrontEnd Developer with React.js,Alice Gray,Omega,Primera,Ingles

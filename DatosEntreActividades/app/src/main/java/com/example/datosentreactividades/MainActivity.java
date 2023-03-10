@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
+        //PASO DE OBJETO DE OBJETOS PARCELABLES
 
         findViewById(R.id.cadenas).setOnClickListener(new View.OnClickListener() {
             @Override
