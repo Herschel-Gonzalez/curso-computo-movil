@@ -19,6 +19,7 @@ public class LibroParcelable implements Parcelable {
 
 
     protected LibroParcelable() {
+        Parcel in = null;
         titulo = in.readString();
         isbn = in.readString();
     }

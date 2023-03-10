@@ -83,6 +83,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.libros).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(getApplicationContext(),BooksActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 }

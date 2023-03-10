@@ -1,8 +1,6 @@
-package utilidades;
+package com.example.datosentreactividades;
 
 import android.content.Context;
-
-import com.example.datosentreactividades.LibroParcelable;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,7 +8,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Utileria {
+public class Utilities {
     public static List<String> getBookLines(Context context){
 
         try{
