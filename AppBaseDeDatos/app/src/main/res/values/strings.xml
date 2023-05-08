@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AppBaseDeDatos</string>
+    <string name="id">Ingrese el ID</string>
+    <string name="titulo">Ingrese el titulo</string>
+    <string name="autor">Ingrese el Autor</string>
+    <string name="precio">Ingrese el precio</string>
+</resources>

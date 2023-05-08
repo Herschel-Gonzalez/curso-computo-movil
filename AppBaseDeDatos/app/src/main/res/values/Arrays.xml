@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="disponible">
+        <item>Agotado</item>
+        <item>Pendiente a surtir</item>
+        <item>En existencia</item>
+        <item>En minimo</item>
+        <item>Descontinuado</item>
+    </string-array>
+</resources>

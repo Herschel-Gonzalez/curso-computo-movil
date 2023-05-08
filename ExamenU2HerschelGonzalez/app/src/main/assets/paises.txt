@@ -1,0 +1,25 @@
+101010,Eqipto,El cairo,Africa
+202020,Turquia,Arkara,Asia
+303030,Kasajastan,Astana,Asia
+404040,Rusia,Moscu,Europa
+505050,Nueva Zelanda,Wellington,Oceania
+606060,Bolivia,La Paz,America
+707070,Nigeria,Abuya,Africa
+808080,Republica Centro Americana,Bangui,Africa
+909090,Republica del congo,Brazaville,Africa
+111111,Republica democratica,Kishasa,Africa
+222222,Estados Unidos,Washington,America
+333333,Canada,Ottawa,America
+444444,Mexico,Ciudad de mexico,America
+555555,Costa Rica,San jose,America
+666666,Autralia,Camberra,Oceania
+777777,Nueva Guinea,Port,Oceania
+888888,Moresby,Guili,Oceania
+999999,Turkisti,Gaalik,Oceania
+121321,Armenia,Ereban,Asia
+343422,Bangladés,Daca,Asia
+342763,Baréin,Mana,Asia
+988322,Atenas,Grecia,Europa
+873434,Ámsterdam,Paises bajos,Europa
+236632,Berlín,Alemania,Europa
+834636,Londres,Reino unido,Europa
