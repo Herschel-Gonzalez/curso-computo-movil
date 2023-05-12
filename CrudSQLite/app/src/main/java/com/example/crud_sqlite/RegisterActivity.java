@@ -3,6 +3,7 @@ package com.example.crud_sqlite;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -40,7 +41,8 @@ public class RegisterActivity extends AppCompatActivity {
                 valores.put("edicion", edicionText);
                 long id = db.insert("libro", null, valores);
                 Toast.makeText(RegisterActivity.this, "Se registro con exito", Toast.LENGTH_SHORT).show();
-
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
     }
