@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/listadoPropietarios"
+        android:title="Ver propietarios" />
+    <item
+        android:id="@+id/almenosUnoVencido"
+        android:title="Almenos un documento vencido" />
+    <item
+        android:id="@+id/todosDocVencidos"
+        android:title="Todos los documentos vencidos" />
+</menu>
