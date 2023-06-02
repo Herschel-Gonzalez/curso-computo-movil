@@ -12,6 +12,15 @@
         android:theme="@style/Theme.ExamenBD19651164"
         tools:targetApi="31">
         <activity
+            android:name=".DocPorVencerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DocumentosPropietarioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TodosDocVencidosActivity"
+            android:exported="false" />
+        <activity
             android:name=".UnDocVencidoActivity"
             android:exported="false" />
         <activity

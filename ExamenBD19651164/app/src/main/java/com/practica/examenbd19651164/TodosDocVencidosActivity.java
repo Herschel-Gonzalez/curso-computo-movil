@@ -3,7 +3,6 @@ package com.practica.examenbd19651164;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -13,16 +12,16 @@ import android.widget.ListView;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-public class UnDocVencidoActivity extends AppCompatActivity {
+public class TodosDocVencidosActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_un_doc_vencido);
-
+        setContentView(R.layout.activity_todos_doc_vencidos);
         DbHelper dbHelper = new DbHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor cursor = db.query("propietario", null, null, null, null, null, null);
@@ -54,9 +53,7 @@ public class UnDocVencidoActivity extends AppCompatActivity {
                     Date myDate = new Date();
                     Date expiracion = formato.parse(fExpiracion);
                     if(expiracion.before(myDate)){
-                        if (!docVencidos.contains(curp)){
-                            docVencidos.add(curp);
-                        }
+                        docVencidos.add(curp);
                     }
 
                 } catch (ParseException e) {
@@ -78,9 +75,7 @@ public class UnDocVencidoActivity extends AppCompatActivity {
                     Date myDate = new Date();
                     Date expiracion = formato.parse(fExpiracion);
                     if(expiracion.before(myDate)){
-                        if (!docVencidos.contains(curp)){
-                            docVencidos.add(curp);
-                        }
+                        docVencidos.add(curp);
                     }
 
                 } catch (ParseException e) {
@@ -91,9 +86,24 @@ public class UnDocVencidoActivity extends AppCompatActivity {
         }
         cursorCirculacion.close();
 
+        List<Propietario> propietariosVencidos = new ArrayList<>();
+        List<String> nombresVencidos = new ArrayList<>();
+        for (int i = 0; i < propietarios.size(); i++) {
+            Propietario propietario = propietarios.get(i);
+            int frecuencia = Collections.frequency(docVencidos, propietario.getCurp());
+            if(frecuencia==2){
+                propietariosVencidos.add(propietario);
+                nombresVencidos.add(propietario.getNombre());
+            }
+        }
+
+
+
+
+
         ListView listView;
-        listView = findViewById(R.id.listUnDocVencido);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.activity_list_view,docVencidos);
+        listView = findViewById(R.id.listAllVencidos);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.activity_list_view,nombresVencidos);
         listView.setAdapter(adapter);
     }
 }

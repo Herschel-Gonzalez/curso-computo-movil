@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -78,6 +79,16 @@ public class PropietariosActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         dialog.dismiss();
+                    }
+                });
+                Button documentos = alert.findViewById(R.id.documentos);
+                documentos.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(PropietariosActivity.this, DocumentosPropietarioActivity.class);
+                        intent.putExtra("curp", propietario.getCurp());
+                        startActivity(intent);
+
                     }
                 });
             }

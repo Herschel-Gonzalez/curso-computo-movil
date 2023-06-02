@@ -87,6 +87,13 @@
 
 
     <Button
+        android:id="@+id/documentos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_error"
+        android:text="Ver documentos" />
+
+    <Button
         android:id="@+id/cerrar"
         android:text="Cerrar"
         android:backgroundTint="@color/black"

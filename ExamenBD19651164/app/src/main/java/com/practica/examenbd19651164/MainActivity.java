@@ -3,6 +3,7 @@ package com.practica.examenbd19651164;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,12 +13,16 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     EditText nombre,curp,paterno,materno,noLicencia,fechaEmision,fechaExpiracion,estadoEmision,folio,noSerie,tipo,estadoCirculacion,expedicionCirculacion,expiracionCirculacion;
     Button registrar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,7 +93,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Se registro con exito", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -103,15 +111,15 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.listadoPropietarios:
                 intent = new Intent(this,PropietariosActivity.class);
-                intent.putExtra("continente","america");
                 break;
             case R.id.almenosUnoVencido:
                 intent = new Intent(getApplicationContext(),UnDocVencidoActivity.class);
-                intent.putExtra("continente","africa");
                 break;
             case R.id.todosDocVencidos:
-                intent = new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("continente","asia");
+                intent = new Intent(getApplicationContext(),TodosDocVencidosActivity.class);
+                break;
+            case R.id.porVencer:
+                intent = new Intent(getApplicationContext(),DocPorVencerActivity.class);
                 break;
 
         }
