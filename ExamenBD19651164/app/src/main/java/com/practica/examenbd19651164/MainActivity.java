@@ -12,16 +12,24 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    EditText nombre,curp,paterno,materno,noLicencia,fechaEmision,fechaExpiracion,estadoEmision,folio,noSerie,tipo,estadoCirculacion,expedicionCirculacion,expiracionCirculacion;
+    EditText nombre,curp,paterno,materno,noLicencia,fechaEmision,fechaExpiracion,estadoEmision,folio,tipo,estadoCirculacion,expedicionCirculacion,expiracionCirculacion;
     Button registrar;
+    Spinner noSerie;
+
+    String serieAuto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         fechaEmision = findViewById(R.id.fechaEmision);
         fechaExpiracion = findViewById(R.id.fechaExpiracion);
         estadoEmision = findViewById(R.id.estadoEmision);
-        noSerie = findViewById(R.id.noSerie);
+
         folio = findViewById(R.id.folio);
         tipo = findViewById(R.id.tipo);
         estadoCirculacion = findViewById(R.id.estado);
@@ -48,6 +56,28 @@ public class MainActivity extends AppCompatActivity {
         noLicencia = findViewById(R.id.noLicencia);
 
         registrar = findViewById(R.id.registrar);
+
+        noSerie = findViewById(R.id.noSerie);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item);
+        List<Auto>autos = Utileria.getAutos(this);
+        for (int i = 0; i < autos.size(); i++) {
+            adapter.add(autos.get(i).getNumeroDeSerie());
+        }
+        noSerie.setAdapter(adapter);
+
+        noSerie.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String selectedOption = (String) adapterView.getItemAtPosition(i);
+                serieAuto = selectedOption;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 long idLicencia = db.insert("licencia", null, valoresLicencia);
                 //Tarjeta Circulacion
                 String folioC = folio.getText().toString();
-                String noSerieC = noSerie.getText().toString();
+                String noSerieC = serieAuto;
                 String tipoC = tipo.getText().toString();
                 String estadoC = estadoCirculacion.getText().toString();
                 String fechaExpedicionC = expedicionCirculacion.getText().toString();
@@ -90,6 +120,9 @@ public class MainActivity extends AppCompatActivity {
                 valoresCirculacion.put("fechaExpedicion", fechaExpedicionC);
                 valoresCirculacion.put("fechaExpiracion", fechaExpiracionC);
                 long idCirculacion = db.insert("tarjetaCirculacion", null, valoresCirculacion);
+                ContentValues values = new ContentValues();
+                values.put("curp",curpP);
+                updateCurpAuto(db,noSerieC,values);
                 Toast.makeText(MainActivity.this, "Se registro con exito", Toast.LENGTH_SHORT).show();
             }
         });
@@ -122,8 +155,24 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(getApplicationContext(),DocPorVencerActivity.class);
                 break;
 
+            case R.id.vencidaMichoacan:
+                intent = new Intent(getApplicationContext(),CirculacionMichVencidaActivity.class);
+                break;
+            case R.id.autos:
+                intent = new Intent(getApplicationContext(),AutosActivity.class);
+                break;
+            case R.id.agregar_auto:
+                intent = new Intent(getApplicationContext(),AgregarAutoActivity.class);
+                break;
+
         }
         startActivity(intent);
         return true;
+    }
+    public boolean updateCurpAuto(SQLiteDatabase db, String noSerie, ContentValues values){
+        int filasActualizadas = db.update("veiculo", values, "noSerie = ?", new String[]{noSerie});
+        Toast.makeText(this, "afectadas: "+filasActualizadas, Toast.LENGTH_SHORT).show();
+        db.close();
+        return filasActualizadas>0;
     }
 }

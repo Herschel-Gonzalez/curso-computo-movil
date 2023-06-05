@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Numero de serie"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+    <TextView
+        android:id="@+id/serie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Marca"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+    <TextView
+        android:id="@+id/marca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modelo"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+    <TextView
+        android:id="@+id/modelo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Año"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+    <TextView
+        android:id="@+id/anio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CURP"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+    <TextView
+        android:id="@+id/curpp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Color"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+    <TextView
+        android:id="@+id/color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+
+
+    <Button
+        android:id="@+id/cerrar"
+        android:text="Cerrar"
+        android:backgroundTint="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </Button>
+</LinearLayout>

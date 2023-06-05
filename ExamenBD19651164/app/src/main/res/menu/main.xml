@@ -2,10 +2,25 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/autos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Autos" />
+    <item
         android:id="@+id/porVencer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="Documentos que vencen este año" />
+    <item
+        android:id="@+id/vencidaMichoacan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Circulacion vencida Michoacan" />
+    <item
+        android:id="@+id/agregar_auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Agregar auto" />
     <item
         android:id="@+id/listadoPropietarios"
         android:title="Ver propietarios" />

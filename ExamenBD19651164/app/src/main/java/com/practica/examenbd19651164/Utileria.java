@@ -120,4 +120,32 @@ public class Utileria {
         cursorLicencia.close();
         return docPorVencer;
     }
+
+    public static List<Auto> getAutos(Context context){
+        DbHelper dbHelper = new DbHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        //List<String>autosName = new ArrayList<>();
+        List<Auto>autos = new ArrayList<>();
+        Cursor cursor = db.query("veiculo", null, null, null, null, null, null);
+        if (cursor.moveToFirst()) {
+            do {
+                @SuppressLint("Range") String marca = cursor.getString(cursor.getColumnIndex("marca"));
+                @SuppressLint("Range") String modelo = cursor.getString(cursor.getColumnIndex("modelo"));
+                @SuppressLint("Range") String noSerie = cursor.getString(cursor.getColumnIndex("noSerie"));
+                @SuppressLint("Range") String anio = cursor.getString(cursor.getColumnIndex("anio"));
+                @SuppressLint("Range") String color = cursor.getString(cursor.getColumnIndex("color"));
+                @SuppressLint("Range") String curp = cursor.getString(cursor.getColumnIndex("curp"));
+
+
+                //autosName.add(marca+" "+modelo);
+                Auto auto = new Auto(noSerie,marca,modelo,anio,curp,color);
+                autos.add(auto);
+
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+        return autos;
+    }
+
+
 }

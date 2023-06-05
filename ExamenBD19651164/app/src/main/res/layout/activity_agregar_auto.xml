@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AgregarAutoActivity">
+
+    <EditText
+        android:id="@+id/numeroSerie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Numero de serie">
+    </EditText>
+    <EditText
+        android:id="@+id/marca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Marca">
+    </EditText>
+    <EditText
+        android:id="@+id/modelo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Modelo">
+    </EditText>
+    <EditText
+        android:id="@+id/anio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Año">
+    </EditText>
+    <EditText
+        android:id="@+id/color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Color">
+    </EditText>
+    <Button
+        android:id="@+id/btnRegistrarAuto"
+        android:text="Agregar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </Button>
+
+</LinearLayout>
